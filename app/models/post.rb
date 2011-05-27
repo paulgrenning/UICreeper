@@ -1,2 +1,3 @@
 class Post < ActiveRecord::Base
-end
+  attr_accessible :name, :subject, :description
+  end

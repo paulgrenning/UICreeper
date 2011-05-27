@@ -1,6 +1,9 @@
 UICreeper::Application.routes.draw do
+  resources :posts
   
   root :to => 'pages#home'
+  
+  match '/posts', :to => 'pages#home'
   
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
@@ -8,8 +11,7 @@ UICreeper::Application.routes.draw do
   
   
   match '/creep',  :to => 'posts#new'
-  match '/showpost',  :to => 'posts#show'
-
+  match '/showpost/:id',  :to => 'posts#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
